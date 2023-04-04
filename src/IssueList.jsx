@@ -9,7 +9,7 @@ const IssueList = () => {
     return (
         <div>
             {data.error && <div>Error: {data.error.message}</div>}
-            <div class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-6 gap-6 m-4 py-4">
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-6 m-4 py-4">
                 {data() && data().data && (
                     <For each={data().data}>{issue =>
                         <Issue issue={issue} closeIssue={doCloseIssue}/>

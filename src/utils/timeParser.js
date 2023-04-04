@@ -24,6 +24,8 @@ export function parseFromNow(time) {
             return `${duration.minutes} min fa`;
         } else if (duration.seconds > 0) {
             return `${Math.trunc(duration.seconds)} sec fa`;
+        } else {
+            return 'adesso';
         }
     }
 }

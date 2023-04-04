@@ -27,8 +27,12 @@ websocketHeartbeatJs.onmessage = function (e) {
                 issues.addIssue(obj.data);
                 break
             case "Issue closed":
-                console.info( `received new ${obj?.id}:\t ${obj?.operation}`);
+                console.info(`received new ${obj?.id}:\t ${obj?.operation}`);
                 issues.closeIssue(obj.data.id);
+                break
+            case "Detail created":
+                console.info(`received new ${obj?.id}:\t ${obj?.operation}`);
+                issues.addDetail(obj.data);
                 break
             default:
                 console.info(`received unknown event`);
@@ -52,11 +56,7 @@ websocketHeartbeatJs.onclose = () => {
 function App() {
     return (
         <div>
-            <button onclick={() => issues.refetch()}>Refetch</button>
-            <br/>
             <IssueList/>
-            <hr/>
-            <Skeleton/>
         </div>
     );
 }

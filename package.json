@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "start": "vite",
-    "dev": "vite",
+    "dev": "vite --base /issuedashboard",
     "expose": "vite --host",
-    "build": "vite build",
+    "build": "vite build --base /issuedashboard",
     "serve": "vite preview"
   },
   "license": "MIT",
